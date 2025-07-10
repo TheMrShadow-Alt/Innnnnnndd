@@ -18,9 +18,9 @@
     body {
       margin: 0;
       font-family: 'Share Tech Mono', monospace;
-      transition: background 0.3s, color 0.3s;
       background: var(--bg-dark);
       color: var(--accent-dark);
+      transition: background 0.3s, color 0.3s;
     }
 
     .light-mode {
@@ -33,24 +33,41 @@
       padding: 30px;
     }
 
-    pre.logo {
-      font-size: 13px;
-      white-space: pre;
-      line-height: 1.2;
-      margin-bottom: 15px;
-      text-shadow: 0 0 6px var(--accent-dark);
+    header img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--accent-dark);
     }
 
-    .light-mode pre.logo {
-      text-shadow: none;
+    h1 {
+      margin: 10px 0;
+      font-size: 2.5em;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    .grid,
+    .row-2,
+    .row-rest {
+      display: grid;
+      justify-items: center;
+      gap: 25px;
+      padding: 20px 40px;
     }
 
     .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 25px;
-      padding: 40px;
-      justify-items: center;
+      grid-template-columns: 1fr;
+    }
+
+    .row-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .row-rest {
+      grid-template-columns: 1fr;
     }
 
     .card {
@@ -64,16 +81,30 @@
       max-width: 250px;
     }
 
+    .card img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent-dark);
+      margin-bottom: 10px;
+    }
+
     .light-mode .card {
       background-color: var(--card-bg-light);
       border-color: var(--accent-light);
       box-shadow: none;
     }
 
+    .light-mode .card img {
+      border-color: var(--accent-light);
+    }
+
     footer {
       text-align: center;
       padding: 30px;
       font-size: 0.8em;
+      color: #888;
     }
 
     button#toggleMode {
@@ -87,7 +118,6 @@
       font-family: inherit;
       font-size: 1em;
       cursor: pointer;
-      transition: all 0.3s ease;
     }
 
     .light-mode button#toggleMode {
@@ -98,170 +128,51 @@
 </head>
 <body>
   <button id="toggleMode">Toggle Theme</button>
+
   <header>
-    <img src="https://cdn.discordapp.com/attachments/1392990807522410546/1392993646357254226/wm750v32r2z61.jpg?ex=68718ded&is=68703c6d&hm=5e57300e96a30699bd781c466923d90c1f4f106bc3019f75e5766dd6b64d9f9d&" alt="Coffin" style="width: 60px; height: 60px;">
-    <h1> VRC Gang Monkeys</h1>
+    <img src="artworks-BFn3IDytgZIgBn0w-jwwrXw-t500x500.jpg" alt="Coffin">
+    <h1>VRC Gang Monkeys</h1>
     <p>The roster of beautifully reckless coders</p>
   </header>
 
-   <section class="grid">
+  <!-- Top row: 1 member -->
+  <section class="grid">
     <div class="card">
-    <img src="https://files.vrchat.cloud/file_cb5ed3b1-1d9e-438b-be76-b646da3631c7_blob?Expires=1753920000&Key-Pair-Id=K3JAQ0Y971TV2Z&Signature=hP7~h-eJ97BFGeggmMwxxPuiXNGqBhkSPmXeM9Io3yWMasMfxLH3T-X-5ZZaWNT13kEgQDYPYnJoWDSsyeGAikS3T1aNGCpMwDoJ7CdZEt~dNNEJPNP-CKOhaHnq8Slth3IFqf7Zs1Dd6qpFQ~VEvA3yJxVSJOUba6JCvdyUqVXSqE58wAHy-vhs6h9fg~TelvsAWWLL2NEvkT1AXbLjXOSsrY9G5gozZTb-CKg64HxktqlC6cge7okFIIHPLKaFjOt8E1aasbW35Tank9VxYAFR~4LYwQxbmr5GbjXvOimWVI8xEG4iHVcPCdHDpVGCdbJXEezVURAK5roarRL-1Q__" alt="Cam" style="width: 60px; height: 60px;">
-    <h3>Mr. Shadow</h3>
-    <p>Just Better</p>
-  </div>
- 
-  <div class="card">
-    <img src="https://cdn.discordapp.com/attachments/1392988084416548955/1392999550792499291/b6bf8248f865e6c867c4d0c15fbfbc9f.jpg?ex=6871936d&is=687041ed&hm=cd31df58e7410b1e6b332ddc5bfc348b08491ee7fcd23c1e6d42f30dce69af71&" alt="Coffin" style="width: 60px; height: 60px;">
-    <h3>Mr.Coffin</h3>
-    <p>Fuck all fags</p>
-  </div>
+      <img src="file_cb5ed3b1-1d9e-438b-be76-b646da3631c7_blob.png" alt="Cam">
+      <h3>Mr. Shadow</h3>
+      <p>Just Beter</p>
+    </div>
+  </section>
 
-  <div class="card">
-    <img src="https://cdn.discordapp.com/attachments/1392988084416548955/1393000009305161891/image.png?ex=687193da&is=6870425a&hm=b64371dad06cd85bc0ff95b0c177340f269ea885400242047a1e43348e444bdf&" alt="Pengu" style="width: 60px; height: 60px;">
-    <h3>༒Ｇｏｄ༒</h3>
-    <p>hello guys :}</p>
-  </div>
+  <!-- Second row: 2 members -->
+  <section class="row-2">
+    <div class="card">
+      <img src="b6bf8248f865e6c867c4d0c15fbfbc9f.jpg" alt="God">
+      <h3>Mr. Coffin</h3>
+      <p>Fuck all fags</p>
+    </div>
+    <div class="card">
+      <img src="https://cdn.discordapp.com/attachments/1392988084416548955/1393000539545014466/VRChat_2025-06-10_22-26-21.582_1280x720.png" alt="Echo">
+      <h3>Mr Anonymous</h3>
+      <p>beans.</p>
+    </div>
+  </section>
 
-  <div class="card">
-    <img src="https://cdn.discordapp.com/attachments/1392988084416548955/1393000539545014466/VRChat_2025-06-10_22-26-21.582_1280x720.png?ex=68719459&is=687042d9&hm=c611d43e67d880968ce9adbcc4ad242325d1ec9ae511b54f50a85857b80f6a02&" alt="Echo" style="width: 60px; height: 60px;">
-    <h3>Mr Anonymous </h3>
-    <p>beans.</p>
-  </div>
+  <!-- Remaining members stacked -->
+  <section class="row-rest">
+    <div class="card">
+      <img src="image.png" alt="Cam">
+      <h3>༒Ｇｏｄ༒</h3>
+      <p>hello guys :}</p>
+    </div>
+  </section>
 
-  <div class="card">
-    <img src="https://media.istockphoto.com/id/1250594547/vector/open-sign-vector-icon-open-sign-editable-stroke-open-sign-linear-symbol-for-use-on-web-and.jpg?s=612x612&w=0&k=20&c=JkI8Lj95so0CGGGkHSWVkd12Lskzg-AjP-l_HIlQDvc=" alt="Open" style="width: 60px; height: 60px;">
-    <h3>Open</h3>
-    <p>...</p>
-  </div>
+  <footer>© 2025 VRC Gang Monkeys. No rules, just runtime.</footer>
 
-    <div class="card">
-    <img src="https://media.istockphoto.com/id/1250594547/vector/open-sign-vector-icon-open-sign-editable-stroke-open-sign-linear-symbol-for-use-on-web-and.jpg?s=612x612&w=0&k=20&c=JkI8Lj95so0CGGGkHSWVkd12Lskzg-AjP-l_HIlQDvc=" alt="Open" style="width: 60px; height: 60px;">
-    <h3>Open</h3>
-    <p>...</p>
-  </div>
-
-    <div class="card">
-    <img src="https://media.istockphoto.com/id/1250594547/vector/open-sign-vector-icon-open-sign-editable-stroke-open-sign-linear-symbol-for-use-on-web-and.jpg?s=612x612&w=0&k=20&c=JkI8Lj95so0CGGGkHSWVkd12Lskzg-AjP-l_HIlQDvc=" alt="Open" style="width: 60px; height: 60px;">
-    <h3>Open</h3>
-    <p>...</p>
-  </div>
-
-    <div class="card">
-    <img src="https://media.istockphoto.com/id/1250594547/vector/open-sign-vector-icon-open-sign-editable-stroke-open-sign-linear-symbol-for-use-on-web-and.jpg?s=612x612&w=0&k=20&c=JkI8Lj95so0CGGGkHSWVkd12Lskzg-AjP-l_HIlQDvc=" alt="Open" style="width: 60px; height: 60px;">
-    <h3>Open</h3>
-    <p>...</p>
-  </div>
-
-    <div class="card">
-    <img src="https://media.istockphoto.com/id/1250594547/vector/open-sign-vector-icon-open-sign-editable-stroke-open-sign-linear-symbol-for-use-on-web-and.jpg?s=612x612&w=0&k=20&c=JkI8Lj95so0CGGGkHSWVkd12Lskzg-AjP-l_HIlQDvc=" alt="Open" style="width: 60px; height: 60px;">
-    <h3>Open</h3>
-    <p>...</p>
-  </div>
-  
-    <div class="card">
-    <img src="https://media.istockphoto.com/id/1250594547/vector/open-sign-vector-icon-open-sign-editable-stroke-open-sign-linear-symbol-for-use-on-web-and.jpg?s=612x612&w=0&k=20&c=JkI8Lj95so0CGGGkHSWVkd12Lskzg-AjP-l_HIlQDvc=" alt="Open" style="width: 60px; height: 60px;">
-    <h3>Open</h3>
-    <p>...</p>
-  </div>
-
-    <div class="card">
-    <img src="https://media.istockphoto.com/id/1250594547/vector/open-sign-vector-icon-open-sign-editable-stroke-open-sign-linear-symbol-for-use-on-web-and.jpg?s=612x612&w=0&k=20&c=JkI8Lj95so0CGGGkHSWVkd12Lskzg-AjP-l_HIlQDvc=" alt="Open" style="width: 60px; height: 60px;">
-    <h3>Open</h3>
-    <p>...</p>
-  </div>
-
-    <div class="card">
-    <img src="https://media.istockphoto.com/id/1250594547/vector/open-sign-vector-icon-open-sign-editable-stroke-open-sign-linear-symbol-for-use-on-web-and.jpg?s=612x612&w=0&k=20&c=JkI8Lj95so0CGGGkHSWVkd12Lskzg-AjP-l_HIlQDvc=" alt="Open" style="width: 60px; height: 60px;">
-    <h3>Open</h3>
-    <p>...</p>
-  </div>
-    
-    <div class="card">
-    <img src="https://media.istockphoto.com/id/1250594547/vector/open-sign-vector-icon-open-sign-editable-stroke-open-sign-linear-symbol-for-use-on-web-and.jpg?s=612x612&w=0&k=20&c=JkI8Lj95so0CGGGkHSWVkd12Lskzg-AjP-l_HIlQDvc=" alt="Open" style="width: 60px; height: 60px;">
-    <h3>Open</h3>
-    <p>...</p>
-  </div>
-
-    <div class="card">
-    <img src="https://media.istockphoto.com/id/1250594547/vector/open-sign-vector-icon-open-sign-editable-stroke-open-sign-linear-symbol-for-use-on-web-and.jpg?s=612x612&w=0&k=20&c=JkI8Lj95so0CGGGkHSWVkd12Lskzg-AjP-l_HIlQDvc=" alt="Open" style="width: 60px; height: 60px;">
-    <h3>Open</h3>
-    <p>...</p>
-  </div>
-
-    <div class="card">
-    <img src="https://media.istockphoto.com/id/1250594547/vector/open-sign-vector-icon-open-sign-editable-stroke-open-sign-linear-symbol-for-use-on-web-and.jpg?s=612x612&w=0&k=20&c=JkI8Lj95so0CGGGkHSWVkd12Lskzg-AjP-l_HIlQDvc=" alt="Open" style="width: 60px; height: 60px;">
-    <h3>Open</h3>
-    <p>...</p>
-  </div>  
-    <div class="card">
-    <img src="https://media.istockphoto.com/id/1250594547/vector/open-sign-vector-icon-open-sign-editable-stroke-open-sign-linear-symbol-for-use-on-web-and.jpg?s=612x612&w=0&k=20&c=JkI8Lj95so0CGGGkHSWVkd12Lskzg-AjP-l_HIlQDvc=" alt="Open" style="width: 60px; height: 60px;">
-    <h3>Open</h3>
-    <p>...</p>
-  </div>
-
-    <div class="card">
-    <img src="https://media.istockphoto.com/id/1250594547/vector/open-sign-vector-icon-open-sign-editable-stroke-open-sign-linear-symbol-for-use-on-web-and.jpg?s=612x612&w=0&k=20&c=JkI8Lj95so0CGGGkHSWVkd12Lskzg-AjP-l_HIlQDvc=" alt="Open" style="width: 60px; height: 60px;">
-    <h3>Open</h3>
-    <p>...</p>
-  </div>
-
-    <div class="card">
-    <img src="https://media.istockphoto.com/id/1250594547/vector/open-sign-vector-icon-open-sign-editable-stroke-open-sign-linear-symbol-for-use-on-web-and.jpg?s=612x612&w=0&k=20&c=JkI8Lj95so0CGGGkHSWVkd12Lskzg-AjP-l_HIlQDvc=" alt="Open" style="width: 60px; height: 60px;">
-    <h3>Open</h3>
-    <p>...</p>
-  </div>  
-    <div class="card">
-    <img src="https://media.istockphoto.com/id/1250594547/vector/open-sign-vector-icon-open-sign-editable-stroke-open-sign-linear-symbol-for-use-on-web-and.jpg?s=612x612&w=0&k=20&c=JkI8Lj95so0CGGGkHSWVkd12Lskzg-AjP-l_HIlQDvc=" alt="Open" style="width: 60px; height: 60px;">
-    <h3>Open</h3>
-    <p>...</p>
-  </div>
-
-    <div class="card">
-    <img src="https://media.istockphoto.com/id/1250594547/vector/open-sign-vector-icon-open-sign-editable-stroke-open-sign-linear-symbol-for-use-on-web-and.jpg?s=612x612&w=0&k=20&c=JkI8Lj95so0CGGGkHSWVkd12Lskzg-AjP-l_HIlQDvc=" alt="Open" style="width: 60px; height: 60px;">
-    <h3>Open</h3>
-    <p>...</p>
-  </div>
-
-    <div class="card">
-    <img src="https://media.istockphoto.com/id/1250594547/vector/open-sign-vector-icon-open-sign-editable-stroke-open-sign-linear-symbol-for-use-on-web-and.jpg?s=612x612&w=0&k=20&c=JkI8Lj95so0CGGGkHSWVkd12Lskzg-AjP-l_HIlQDvc=" alt="Open" style="width: 60px; height: 60px;">
-    <h3>Open</h3>
-    <p>...</p>
-  </div>
-  
-    <div class="card">
-    <img src="https://media.istockphoto.com/id/1250594547/vector/open-sign-vector-icon-open-sign-editable-stroke-open-sign-linear-symbol-for-use-on-web-and.jpg?s=612x612&w=0&k=20&c=JkI8Lj95so0CGGGkHSWVkd12Lskzg-AjP-l_HIlQDvc=" alt="Open" style="width: 60px; height: 60px;">
-    <h3>Open</h3>
-    <p>...</p>
-  </div>
-  
-    <div class="card">
-    <img src="https://media.istockphoto.com/id/1250594547/vector/open-sign-vector-icon-open-sign-editable-stroke-open-sign-linear-symbol-for-use-on-web-and.jpg?s=612x612&w=0&k=20&c=JkI8Lj95so0CGGGkHSWVkd12Lskzg-AjP-l_HIlQDvc=" alt="Open" style="width: 60px; height: 60px;">
-    <h3>Open</h3>
-    <p>...</p>
-  </div>
-  
-    <div class="card">
-    <img src="https://media.istockphoto.com/id/1250594547/vector/open-sign-vector-icon-open-sign-editable-stroke-open-sign-linear-symbol-for-use-on-web-and.jpg?s=612x612&w=0&k=20&c=JkI8Lj95so0CGGGkHSWVkd12Lskzg-AjP-l_HIlQDvc=" alt="Open" style="width: 60px; height: 60px;">
-    <h3>Open</h3>
-    <p>...</p>
-  </div>
-  
-    <div class="card">
-    <img src="https://media.istockphoto.com/id/1250594547/vector/open-sign-vector-icon-open-sign-editable-stroke-open-sign-linear-symbol-for-use-on-web-and.jpg?s=612x612&w=0&k=20&c=JkI8Lj95so0CGGGkHSWVkd12Lskzg-AjP-l_HIlQDvc=" alt="Open" style="width: 60px; height: 60px;">
-    <h3>Open</h3>
-    <p>...</p>
-  </div>
-  
-    <div class="card">
-    <img src="https://media.istockphoto.com/id/1250594547/vector/open-sign-vector-icon-open-sign-editable-stroke-open-sign-linear-symbol-for-use-on-web-and.jpg?s=612x612&w=0&k=20&c=JkI8Lj95so0CGGGkHSWVkd12Lskzg-AjP-l_HIlQDvc=" alt="Open" style="width: 60px; height: 60px;">
-    <h3>Open</h3>
-    <p>...</p>
-  </div>
-  
-    <div class="card">
-    <img src="https://media.istockphoto.com/id/1250594547/vector/open-sign-vector-icon-open-sign-editable-stroke-open-sign-linear-symbol-for-use-on-web-and.jpg?s=612x612&w=0&k=20&c=JkI8Lj95so0CGGGkHSWVkd12Lskzg-AjP-l_HIlQDvc=" alt="Open" style="width: 60px; height: 60px;">
-    <h3>Open</h3>
-    <p>...</p>
-  </div>
- </section>
+  <script>
+    document.getElementById('toggleMode').addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+    });
+  </script>
+</body>
+</html>

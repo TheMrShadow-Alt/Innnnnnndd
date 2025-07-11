@@ -18,9 +18,9 @@
     body {
       margin: 0;
       font-family: 'Share Tech Mono', monospace;
+      transition: background 0.3s, color 0.3s;
       background: var(--bg-dark);
       color: var(--accent-dark);
-      transition: background 0.3s, color 0.3s;
     }
 
     .light-mode {
@@ -33,41 +33,24 @@
       padding: 30px;
     }
 
-    header img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      box-shadow: 0 0 10px var(--accent-dark);
+    pre.logo {
+      font-size: 13px;
+      white-space: pre;
+      line-height: 1.2;
+      margin-bottom: 15px;
+      text-shadow: 0 0 6px var(--accent-dark);
     }
 
-    h1 {
-      margin: 10px 0;
-      font-size: 2.5em;
-    }
-
-    p {
-      margin-bottom: 20px;
-    }
-
-    .grid,
-    .row-2,
-    .row-rest {
-      display: grid;
-      justify-items: center;
-      gap: 25px;
-      padding: 20px 40px;
+    .light-mode pre.logo {
+      text-shadow: none;
     }
 
     .grid {
-      grid-template-columns: 1fr;
-    }
-
-    .row-2 {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .row-rest {
-      grid-template-columns: 1fr;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 40px;
+      justify-items: center;
     }
 
     .card {
@@ -81,30 +64,16 @@
       max-width: 250px;
     }
 
-    .card img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid var(--accent-dark);
-      margin-bottom: 10px;
-    }
-
     .light-mode .card {
       background-color: var(--card-bg-light);
       border-color: var(--accent-light);
       box-shadow: none;
     }
 
-    .light-mode .card img {
-      border-color: var(--accent-light);
-    }
-
     footer {
       text-align: center;
       padding: 30px;
       font-size: 0.8em;
-      color: #888;
     }
 
     button#toggleMode {
@@ -118,6 +87,7 @@
       font-family: inherit;
       font-size: 1em;
       cursor: pointer;
+      transition: all 0.3s ease;
     }
 
     .light-mode button#toggleMode {
@@ -128,79 +98,76 @@
 </head>
 <body>
   <button id="toggleMode">Toggle Theme</button>
-
   <header>
-    <img src="artworks-BFn3IDytgZIgBn0w-jwwrXw-t500x500.jpg" alt="Coffin">
-    <h1>VRC Gang Monkeys</h1>
+    <img src="artworks-BFn3IDytgZIgBn0w-jwwrXw-t500x500.jpg" alt="Coffin" style="width: 60px; height: 60px;">
+    <h1> VRC Gang Monkeys</h1>
     <p>The roster of beautifully reckless coders</p>
   </header>
 
-  <!-- Top row: 1 member -->
   <section class="grid">
-    <div class="card">
-      <img src="file_cb5ed3b1-1d9e-438b-be76-b646da3631c7_blob.png" alt="Cam">
-      <h3>Mr. Shadow</h3>
-      <p>Just Beter</p>
-    </div>
-  </section>
+  <div class="card">
+    <img src="file_cb5ed3b1-1d9e-438b-be76-b646da3631c7_blob.png" alt="Cam" style="width: 60px; height: 60px;">
+    <h3>Mr. Shadow</h3>
+    <p>Just Beter</p>
+  </div>
+  
+  <div class="card">
+    <img src="b6bf8248f865e6c867c4d0c15fbfbc9f.jpg" alt="Coffin" style="width: 60px; height: 60px;">
+    <h3>Mr.Coffin</h3>
+    <p>Fuck all fags</p>
+  </div>
 
-  <!-- Second row: 2 members -->
-  <section class="row-2">
-    <div class="card">
-      <img src="b6bf8248f865e6c867c4d0c15fbfbc9f.jpg" alt="God">
-      <h3>Mr. Coffin</h3>
-      <p>Fuck all fags</p>
-    </div>
-    <div class="card">
-      <img src="VRChat_2025-06-10_22-26-21.582_1280x720.png" alt="Echo">
-      <h3>Mr Anonymous</h3>
-      <p>beans.</p>
-    </div>
-  </section>
+  <div class="card">
+    <img src="image.png" alt="Pengu" style="width: 60px; height: 60px;">
+    <h3>༒Ｇｏｄ༒</h3>
+    <p>hello guys :}</p>
+  </div>
 
-  <!-- Remaining members stacked -->
-  <section class="row-rest">
-    <div class="card">
-      <img src="image.png" alt="Cam">
-      <h3>༒Ｇｏｄ༒</h3>
-      <p>hello guys :}</p>
-    </div>
-    
   <div class="card">
-    <img src="https://media.istockphoto.com/id/1250594547/vector/open-sign-vector-icon-open-sign-editable-stroke-open-sign-linear-symbol-for-use-on-web-and.jpg?s=612x612&w=0&k=20&c=JkI8Lj95so0CGGGkHSWVkd12Lskzg-AjP-l_HIlQDvc=" alt="Open" style="width: 60px; height: 60px;">
-    <h3>Open</h3>
+    <img src="VRChat_2025-06-10_22-26-21.582_1280x720.png" alt="Echo" style="width: 60px; height: 60px;">
+    <h3>Mr Anonymous </h3>
+    <p>beans.</p>
+  </div>
+  
+  <div class="card">
+    <img src="VRChat_2025-06-10_22-26-21.582_1280x720.png" alt="Echo" style="width: 60px; height: 60px;">
+    <h3>zoxhq  </h3>
     <p>...</p>
   </div>
-        
-  <div class="card">
-    <img src="https://media.istockphoto.com/id/1250594547/vector/open-sign-vector-icon-open-sign-editable-stroke-open-sign-linear-symbol-for-use-on-web-and.jpg?s=612x612&w=0&k=20&c=JkI8Lj95so0CGGGkHSWVkd12Lskzg-AjP-l_HIlQDvc=" alt="Open" style="width: 60px; height: 60px;">
-    <h3>Open</h3>
-    <p>...</p>
-  </div>
-        
-  <div class="card">
-    <img src="https://media.istockphoto.com/id/1250594547/vector/open-sign-vector-icon-open-sign-editable-stroke-open-sign-linear-symbol-for-use-on-web-and.jpg?s=612x612&w=0&k=20&c=JkI8Lj95so0CGGGkHSWVkd12Lskzg-AjP-l_HIlQDvc=" alt="Open" style="width: 60px; height: 60px;">
-    <h3>Open</h3>
-    <p>...</p>
-  </div>
-        
-  <div class="card">
-    <img src="https://media.istockphoto.com/id/1250594547/vector/open-sign-vector-icon-open-sign-editable-stroke-open-sign-linear-symbol-for-use-on-web-and.jpg?s=612x612&w=0&k=20&c=JkI8Lj95so0CGGGkHSWVkd12Lskzg-AjP-l_HIlQDvc=" alt="Open" style="width: 60px; height: 60px;">
-    <h3>Open</h3>
-    <p>...</p>
-  </div>
-        
-  <div class="card">
-    <img src="https://media.istockphoto.com/id/1250594547/vector/open-sign-vector-icon-open-sign-editable-stroke-open-sign-linear-symbol-for-use-on-web-and.jpg?s=612x612&w=0&k=20&c=JkI8Lj95so0CGGGkHSWVkd12Lskzg-AjP-l_HIlQDvc=" alt="Open" style="width: 60px; height: 60px;">
-    <h3>Open</h3>
-    <p>...</p>
-  </div>
-  </section>
+
+  <div class="card"><img src="bane.jpg" alt="Bane" style="width: 60px; height: 60px;"><h3>Bane</h3><p>Standing by...</p></div>
+  <div class="card"><img src="purist.jpg" alt="Purist" style="width: 60px; height: 60px;"><h3>Purist</h3><p>Standing by...</p></div>
+  <div class="card"><img src="osu.jpg" alt="Osu" style="width: 60px; height: 60px;"><h3>Osu</h3><p>Standing by...</p></div>
+  <div class="card"><img src="price.jpg" alt="Price" style="width: 60px; height: 60px;"><h3>Price</h3><p>Standing by...</p></div>
+  <div class="card"><img src="black-lungs.jpg" alt="Black Lungs" style="width: 60px; height: 60px;"><h3>Black Lungs</h3><p>Standing by...</p></div>
+  <div class="card"><img src="butcher.jpg" alt="Butcher" style="width: 60px; height: 60px;"><h3>Butcher</h3><p>Standing by...</p></div>
+  <div class="card"><img src="spooky.jpg" alt="Spooky" style="width: 60px; height: 60px;"><h3>Spooky</h3><p>Standing by...</p></div>
+  <div class="card"><img src="decal.jpg" alt="Decal" style="width: 60px; height: 60px;"><h3>Decal</h3><p>Standing by...</p></div>
+  <div class="card"><img src="lucifer.jpg" alt="Lucifer" style="width: 60px; height: 60px;"><h3>Lucifer</h3><p>Standing by...</p></div>
+  <div class="card"><img src="sect.jpg" alt="Sect" style="width: 60px; height: 60px;"><h3>Sect</h3><p>Standing by...</p></div>
+  <div class="card"><img src="sekli.jpg" alt="Sekli" style="width: 60px; height: 60px;"><h3>Sekli</h3><p>Standing by...</p></div>
+  <div class="card"><img src="egirlcuts.jpg" alt="Egirlcuts" style="width: 60px; height: 60px;"><h3>Egirlcuts</h3><p>Standing by...</p></div>
+  <div class="card"><img src="ceo.jpg" alt="CEO" style="width: 60px; height: 60px;"><h3>CEO</h3><p>Standing by...</p></div>
+  <div class="card"><img src="hardline.jpg" alt="Hardline" style="width: 60px; height: 60px;"><h3>Hardline</h3><p>Standing by...</p></div>
+  <div class="card"><img src="hostage.jpg" alt="Hostage" style="width: 60px; height: 60px;"><h3>Hostage</h3><p>Standing by...</p></div>
+  <div class="card"><img src="demeanor.jpg" alt="Demeanor" style="width: 60px; height: 60px;"><h3>Demeanor</h3><p>Standing by...</p></div>
+  <div class="card"><img src="error404.jpg" alt="Error404" style="width: 60px; height: 60px;"><h3>Error404</h3><p>Standing by...</p></div>
+  <div class="card"><img src="toxicity.jpg" alt="Toxicity" style="width: 60px; height: 60px;"><h3>Toxicity</h3><p>Standing by...</p></div>
+  <div class="card"><img src="trash.jpg" alt="Trash" style="width: 60px; height: 60px;"><h3>Trash</h3><p>Standing by...</p></div>
+  <div class="card"><img src="anonymousx.jpg" alt="Anonymousx" style="width: 60px; height: 60px;"><h3>Anonymousx</h3><p>Standing by...</p></div>
+  <div class="card"><img src="clowny.jpg" alt="Clowny" style="width: 60px; height: 60px;"><h3>Clowny</h3><p>Standing by...</p></div>
+  <div class="card"><img src="homicide.jpg" alt="Homicide" style="width: 60px; height: 60px;"><h3>Homicide</h3><p>Standing by...</p></div>
+  <div class="card"><img src="syndicate.jpg" alt="Syndicate" style="width: 60px; height: 60px;"><h3>Syndicate</h3><p>Standing by...</p></div>
+
+
+ </section>
+
 
   <footer>© 2025 VRC Gang Monkeys. No rules, just runtime.</footer>
 
   <script>
-    document.getElementById('toggleMode').addEventListener('click', () => {
+    const btn = document.getElementById('toggleMode');
+    btn.addEventListener('click', () => {
       document.body.classList.toggle('light-mode');
     });
   </script>

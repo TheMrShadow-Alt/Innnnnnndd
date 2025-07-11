@@ -1,268 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>VRC Gang Monkeys</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-dark: #0e0e0e;
-      --bg-light: #f4f4f4;
-      --accent-dark: #00ffb3;
-      --accent-light: #222;
-      --card-bg-dark: #161616;
-      --card-bg-light: #ffffff;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Share Tech Mono', monospace;
-      background: var(--bg-dark);
-      color: var(--accent-dark);
-      transition: background 0.3s, color 0.3s;
-    }
-
-    .light-mode {
-      background: var(--bg-light);
-      color: var(--accent-light);
-    }
-
-    header {
-      text-align: center;
-      padding: 30px;
-    }
-
-    header img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      box-shadow: 0 0 10px var(--accent-dark);
-    }
-
-    h1 {
-      font-size: 2.5em;
-      margin: 10px 0;
-    }
-
-    p {
-      margin-bottom: 20px;
-    }
-
-    .menu {
-      position: fixed;
-      top: 15px;
-      left: 15px;
-      z-index: 999;
-      font-family: monospace;
-      background-color: var(--card-bg-dark);
-      border: 2px solid var(--accent-dark);
-      border-radius: 5px;
-      padding: 10px;
-      box-shadow: 0 0 10px var(--accent-dark);
-    }
-
-    .menu ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .menu li {
-      margin: 8px 0;
-    }
-
-    .menu a {
-      text-decoration: none;
-      color: var(--accent-dark);
-    }
-
-    .light-mode .menu {
-      background-color: var(--card-bg-light);
-      border-color: var(--accent-light);
-    }
-
-    .light-mode .menu a {
-      color: var(--accent-light);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 25px;
-      padding: 40px;
-      justify-items: center;
-    }
-
-    .card {
-      background-color: var(--card-bg-dark);
-      border: 2px solid var(--accent-dark);
-      border-radius: 10px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 0 15px var(--accent-dark);
-      transition: all 0.3s ease;
-      max-width: 250px;
-    }
-
-    .card img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid var(--accent-dark);
-      margin-bottom: 10px;
-    }
-
-    .light-mode .card {
-      background-color: var(--card-bg-light);
-      border-color: var(--accent-light);
-      box-shadow: none;
-    }
-
-    .light-mode .card img {
-      border-color: var(--accent-light);
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 0.8em;
-      color: #888;
-    }
-
-    button#toggleMode {
-      position: fixed;
-      top: 15px;
-      right: 15px;
-      background: none;
-      border: 2px solid var(--accent-dark);
-      color: var(--accent-dark);
-      padding: 8px 16px;
-      font-family: inherit;
-      font-size: 1em;
-      cursor: pointer;
-    }
-
-    .light-mode button#toggleMode {
-      border-color: var(--accent-light);
-      color: var(--accent-light);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VRC GANGMONKEYS</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #1a0033, #2d004d);
+            color: #fff;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh; /* Ensure body takes full viewport height */
+        }
+        /* Background image overlay */
+        body::before {
+            content: "";
+            position: fixed; /* Changed to fixed for full-screen coverage */
+            top: 0;
+            left: 0;
+            width: 100vw; /* Full viewport width */
+            height: 100vh; /* Full viewport height */
+            background: url('https://media.discordapp.net/attachments/1383239930498514955/1393089044434387155/83EC1816-59C6-40BB-BF44-BCD8F8BC8943.gif?ex=6871e6c6&is=68709546&hm=ca14f3864517d5aa00a88aa62ac5911a349e3c7c022b755f968585fc9677d6dd&=&width=625&height=293') no-repeat center center/cover;
+            opacity: 0.3;
+            z-index: -1;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-bottom: 1px solid #4b0082;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #ff00ff;
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+            letter-spacing: 2px;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.7);
+        }
+        .nav button {
+            background: #4b0082;
+            border: none;
+            padding: 10px 20px;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .nav button:hover {
+            background: #6a0dad;
+        }
+        .search-bar {
+            text-align: center;
+            padding: 20px;
+        }
+        .search-bar input {
+            width: 60%;
+            padding: 10px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            outline: none;
+        }
+        .users {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .user-btn {
+            background: #4b0082; /* Purple background */
+            border: 2px solid #000000; /* Black border */
+            padding: 10px;
+            text-align: center;
+            font-size: 1em;
+            color: #000000; /* Black text */
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; /* Purple glow */
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 0 10px rgba(75, 0, 130, 0.5);
+        }
+        .user-btn:hover {
+            background: #6a0dad; /* Lighter purple on hover */
+            box-shadow: 0 0 20px rgba(75, 0, 130, 0.8);
+            text-shadow: 0 0 15px #ff00ff, 0 0 25px #ff00ff; /* Enhanced purple glow on hover */
+        }
+        .user-btn.active {
+            background: #ffd930; /* Brighter purple for active state */
+            box-shadow: 0 0 20px #9b30ff;
+            color: #000000; /* Black text for active state */
+            text-shadow: 0 0 15px #ff00ff, 0 0 25px #ff00ff; /* Purple glow for active state */
+        }
+        .user-btn.group {
+            background: #3543fd; /* Brighter purple for active state */
+            box-shadow: 0 0 20px #9b30ff;
+            color: #000000; /* Black text for active state */
+            text-shadow: 0 0 15px #ff00ff, 0 0 25px #ff00ff; /* Purple glow for active state */
+        }
+        .status-bar {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 1.2em;
+            color: #b0b0b0;
+        }
+        .discord-link {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #4b0082; /* Purple background */
+            border: 2px solid #000000; /* Black border */
+            padding: 8px 16px;
+            color: #000000; /* Black text */
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; /* Purple glow */
+            font-size: 1em;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 0 10px rgba(75, 0, 130, 0.5);
+        }
+        .discord-link:hover {
+            background: #6a0dad; /* Lighter purple on hover */
+            box-shadow: 0 0 20px rgba(75, 0, 130, 0.8);
+            text-shadow: 0 0 15px #ff00ff, 0 0 25px #ff00ff; /* Enhanced purple glow on hover */
+        }
+    </style>
 </head>
 <body>
-  <nav class="menu">
-    <ul>
-      <li><a href="#main">> Main Roster</a></li>
-      <li><a href="#vrc-groups">> VRC Groups</a></li>
-      <li><a href="#discord">> Join Our Discord</a></li>
-    </ul>
-  </nav>
+    <div class="status-bar">10:28</div>
+    <a href="https://discord.gg/bqGeGTBNZh" class="discord-link">Join Our Discord</a>
+    <div class="header">
+        <h1>VRC GANGMONKEYS.COM</h1>
+    </div>
+    <div class="nav">
+      <a href="#home"><button>Home</button></a>
+      <a href="#groups"><button>Groups</button></a>
+    </div>
 
-  <button id="toggleMode">Toggle Theme</button>
+<header id="home"> ... 
+    <div class="search-bar">
+        <input type="text" placeholder="Search...">
+    </div>
+    <div class="users">
+    <div class="user-btn active">¿Mr༒Shadow¿</div>
+    <div class="user-btn active">Mr.Coffin⚰</div>
+    <div class="user-btn active">༒Ｇｏｄ༒</div>
+    <div class="user-btn active">¿Mr Anonymous¿</div>
+    <div class="user-btn">zoxhq</div>
+    <div class="user-btn">Bane</div>
+    <div class="user-btn">Purist</div>
+    <div class="user-btn">Osu</div>
+    <div class="user-btn">Price</div>
+    <div class="user-btn">Black Lungs</div>
+    <div class="user-btn">Butcher</div>
+    <div class="user-btn">Spooky</div>
+    <div class="user-btn">Decal</div>
+    <div class="user-btn">Lucifer</div>
+    <div class="user-btn">Sect</div>
+    <div class="user-btn">Sekli</div>
+    <div class="user-btn">Egirlcuts</div>
+    <div class="user-btn">CEO</div>
+    <div class="user-btn">Hardline</div>
+    <div class="user-btn">Hostage</div>
+    <div class="user-btn">Demeanor</div>
+    <div class="user-btn">Error404</div>
+    <div class="user-btn">Toxicity</div>
+    <div class="user-btn">Trash</div>
+    <div class="user-btn">Anonymousx</div>
+    <div class="user-btn">Clowny</div>
+    <div class="user-btn">Homicide</div>
+    <div class="user-btn">Syndicate</div>
+    <div class="user-btn">Elijah</div>
+        <div class="user-btn">Proxy</div>
+        <div class="user-btn">Alumi</div>
+        <div class="user-btn">Temm1e</div>
+        <div class="user-btn">Galaxer</div>
+        <div class="user-btn">Grips</div>
+        <div class="user-btn">Butcher</div>
+        <div class="user-btn">akimara</div>
+        <div class="user-btn">Bloo</div>
+        <div class="user-btn">Disrupt</div>
+        <div class="user-btn">Nem1z</div>
+        <div class="user-btn">Vermillion</div>
+        <div class="user-btn">MummySTM</div>
+        <div class="user-btn">Drako (rains bff)</div>
+        <div class="user-btn">Rain (Drakos gff)</div>
+        <div class="user-btn">Cyrus</div>
+        <div class="user-btn">Crypt1on</div>
+        <div class="user-btn">DaddyHDK</div>
+        <div class="user-btn">G59Bandit</div>
+        <div class="user-btn">Garra</div>
+        <div class="user-btn">Madara</div>
+        <div class="user-btn">Four Hours</div>
+        <div class="user-btn">Aqua</div>
+        <div class="user-btn">R1ze</div>
+        <div class="user-btn">Tu-Ka</div>
+        <div class="user-btn">v2</div>
+        <div class="user-btn">Pituf0</div>
+        <div class="user-btn">RAGEQU1LL</div>
+        <div class="user-btn">SpookyK</div>
+        <div class="user-btn">Afghan</div>
+        <div class="user-btn">BAN3</div>
+        <div class="user-btn">cherry</div>
+        <div class="user-btn">Baphomet</div>
+        <div class="user-btn">BlissK</div>
+        <div class="user-btn">BlueDevil</div>
+        <div class="user-btn">Chimp</div>
+        <div class="user-btn">GirthControl</div>
+        <div class="user-btn">GrimReaper</div>
+        <div class="user-btn">Iraq</div>
+        <div class="user-btn">Kozutoh</div>
+        <div class="user-btn">lurking</div>
+        <div class="user-btn">Magma</div>
+        <div class="user-btn">LazyK</div>
+        <div class="user-btn">Lucifer</div>
+        <div class="user-btn">Y2Perkz</div>
+        <div class="user-btn">#Sleepy</div>
+        <div class="user-btn">MonsterK</div>
+        <div class="user-btn">Banz</div>
 
-  <header id="main">
-    <img src="Your paragraph text (12).png" alt="Gang Logo">
-    <h1>VRC Gang Monkeys</h1>
-    <p>The roster of beautifully reckless coders</p>
-  </header>
+    </div>
+    </header>
+        <div class="header">
+        <h1>VRC GROUPS</h1>
+    </div>
+<section class="users" id="groups">  
 
-  <section class="grid">
-  <div class="card">
-    <img src="file_cb5ed3b1-1d9e-438b-be76-b646da3631c7_blob.png" alt="Cam" style="width: 60px; height: 60px;">
-    <h3>Mr. Shadow</h3>
-    <p>Just Beter</p>
-  </div>
-  
-  <div class="card">
-    <img src="b6bf8248f865e6c867c4d0c15fbfbc9f.jpg" alt="Coffin" style="width: 60px; height: 60px;">
-    <h3>Mr.Coffin</h3>
-    <p>Fuck all fags</p>
-  </div>
 
-  <div class="card">
-    <img src="image.png" alt="Pengu" style="width: 60px; height: 60px;">
-    <h3>༒Ｇｏｄ༒</h3>
-    <p> hello guys :}</p>
-  </div>
+    <div class="user-btn group">༒Shadow Family༒</div>
+<div class="user-btn group">LC</div>
+<div class="user-btn group">Hostle</div>
+<div class="user-btn group">606</div>
+<div class="user-btn group">303</div>
+<div class="user-btn group">Ghxstface Gxng</div>
+<div class="user-btn group">Reapers Tears</div>
+<div class="user-btn group">Immortal</div>
+<div class="user-btn group">Trusted User Gxng</div>
+<div class="user-btn group">Activist</div>
+<div class="user-btn group">Anonymous</div>
+<div class="user-btn group">808 Disciple</div>
+<div class="user-btn group">The Bass VRC</div>
+<div class="user-btn group">DBD</div>
+<div class="user-btn group">System 32</div>
+<div class="user-btn group">Static</div>
+<div class="user-btn group">Toxic</div>
+<div class="user-btn group">301</div>
 
-  <div class="card">
-    <img src="image1.png" alt="Echo" style="width: 60px; height: 60px;">
-    <h3>Mr Anonymous </h3>
-    <p>beans.</p>
-  </div>
-  
-  <div class="card">
-    <img src="VRChat_2025-06-10_22-26-21.582_1280x720.png" alt="Echo" style="width: 60px; height: 60px;">
-    <h3>zoxhq  </h3>
-    <p>...</p>
-  </div>
 
-  <div class="card"><img src="Baphomet_by_Eliphas_Levi.jpg" alt="Bane" style="width: 60px; height: 60px;"><h3>Bane</h3><p>Standing by...</p></div>
-  <div class="card"><img src="purist.jpg" alt="Purist" style="width: 60px; height: 60px;"><h3>Purist</h3><p>Standing by...</p></div>
-  <div class="card"><img src="7d07av.jpg" alt="Osu" style="width: 60px; height: 60px;"><h3>Osu</h3><p>Standing by...</p></div>
-  <div class="card"><img src="price.jpg" alt="Price" style="width: 60px; height: 60px;"><h3>Price</h3><p>Standing by...</p></div>
-  <div class="card"><img src="black-lungs.jpg" alt="Black Lungs" style="width: 60px; height: 60px;"><h3>Black Lungs</h3><p>Standing by...</p></div>
-  <div class="card"><img src="butcher.jpg" alt="Butcher" style="width: 60px; height: 60px;"><h3>Butcher</h3><p>Standing by...</p></div>
-  <div class="card"><img src="Screenshot_2025-04-22_183424.png" alt="Spooky" style="width: 60px; height: 60px;"><h3>Spooky</h3><p>Standing by...</p></div>
-  <div class="card"><img src="decal.jpg" alt="Decal" style="width: 60px; height: 60px;"><h3>Decal</h3><p>Standing by...</p></div>
-  <div class="card"><img src="lucifer.jpg" alt="Lucifer" style="width: 60px; height: 60px;"><h3>Lucifer</h3><p>Standing by...</p></div>
-  <div class="card"><img src="sect.jpg" alt="Sect" style="width: 60px; height: 60px;"><h3>Sect</h3><p>Standing by...</p></div>
-  <div class="card"><img src="sekli.jpg" alt="Sekli" style="width: 60px; height: 60px;"><h3>Sekli</h3><p>Standing by...</p></div>
-  <div class="card"><img src="egirlcuts.jpg" alt="Egirlcuts" style="width: 60px; height: 60px;"><h3>Egirlcuts</h3><p>Standing by...</p></div>
-  <div class="card"><img src="ceo.jpg" alt="CEO" style="width: 60px; height: 60px;"><h3>CEO</h3><p>Standing by...</p></div>
-  <div class="card"><img src="hardline.jpg" alt="Hardline" style="width: 60px; height: 60px;"><h3>Hardline</h3><p>Standing by...</p></div>
-  <div class="card"><img src="hostage.jpg" alt="Hostage" style="width: 60px; height: 60px;"><h3>Hostage</h3><p>Standing by...</p></div>
-  <div class="card"><img src="demeanor.jpg" alt="Demeanor" style="width: 60px; height: 60px;"><h3>Demeanor</h3><p>Standing by...</p></div>
-  <div class="card"><img src="error404.jpg" alt="Error404" style="width: 60px; height: 60px;"><h3>Error404</h3><p>Standing by...</p></div>
-  <div class="card"><img src="toxicity.jpg" alt="Toxicity" style="width: 60px; height: 60px;"><h3>Toxicity</h3><p>Standing by...</p></div>
-  <div class="card"><img src="de159160d5d97e1ef6ccafc88b84f8d3.jpg" alt="Trash" style="width: 60px; height: 60px;"><h3>Trash</h3><p>Standing by...</p></div>
-  <div class="card"><img src="anonymousx.jpg" alt="Anonymousx" style="width: 60px; height: 60px;"><h3>Anonymousx</h3><p>Standing by...</p></div>
-  <div class="card"><img src="file_a1e1e2aa-6e2b-4318-9d84-a2a6eb3e61b6_blob.png" alt="Clowny" style="width: 60px; height: 60px;"><h3>Clowny</h3><p>Standing by...</p></div>
-  <div class="card"><img src="homicide.jpg" alt="Homicide" style="width: 60px; height: 60px;"><h3>Homicide</h3><p>Standing by...</p></div>
-  <div class="card"><img src="syndicate.jpg" alt="Syndicate" style="width: 60px; height: 60px;"><h3>Syndicate</h3><p>Standing by...</p></div>
- <div class="card"><img src="photo_2025-04-02_13-32-01.jpg" alt="Syndicate" style="width: 60px; height: 60px;"><h3>Admin</h3><p>Standing by...</p></div>
-
- </section>
-
- <section class="grid" id="vrc-groups">
-    
-  <div class="card"><img src="df0faa661d203ccf660b6a5354bf931c.jpg" alt="LC"><h3>LC</h3><p>Get in the Coffin.</p></div>
-  <div class="card"><img src="hq720.jpg" alt="Hostle"><h3>Hostel</h3><p>The Gay Ones.</p></div>
-  <div class="card"><img src="606.jpg" alt="606"><h3>606</h3><p>Standing by...</p></div>
-  <div class="card"><img src="303.jpg" alt="303"><h3>303</h3><p>Standing by...</p></div>
-  <div class="card"><img src="image_2025-07-10_234357279.png" alt="Ghxstface Gxng"><h3>Ghxstface Gxng</h3><p>Tell me your name and I will tell you mine.</p></div>
-  <div class="card"><img src="reapers-tears.jpg" alt="Reapers Tears"><h3>Reapers Tears</h3><p>Standing by...</p></div>
-  <div class="card"><img src="immortal.jpg" alt="Immortal"><h3>Immortal</h3><p>Standing by...</p></div>
-  <div class="card"><img src="trusted-user-gxng.jpg" alt="Trusted User Gxng"><h3>Trusted User Gxng</h3><p>Standing by...</p></div>
-  <div class="card"><img src="activist.jpg" alt="Activist"><h3>Activist</h3><p>Standing by...</p></div>
-  <div class="card"><img src="anonymous.jpg" alt="Anonymous"><h3>Anonymous</h3><p>Standing by...</p></div>
-  <div class="card"><img src="808-disciple.jpg" alt="808 Disciple"><h3>808 Disciple</h3><p>Standing by...</p></div>
-  <div class="card"><img src="bass-vrc.jpg" alt="The Bass VRC"><h3>The Bass VRC</h3><p>Standing by...</p></div>
-  <div class="card"><img src="dbd.jpg" alt="DBD"><h3>DBD</h3><p>Standing by...</p></div>
-  <div class="card"><img src="system-32.jpg" alt="System 32"><h3>System 32</h3><p>Standing by...</p></div>
-  <div class="card"><img src="static.jpg" alt="Static"><h3>Static</h3><p>Standing by...</p></div>
-  <div class="card"><img src="toxic.jpg" alt="Toxic"><h3>Toxic</h3><p>Standing by...</p></div>
-  <div class="card"><img src="301.jpg" alt="301"><h3>301</h3><p>Standing by...</p></div>
-  </section>
-  <section class="grid" id="discord">
-  <div class="card">
-    <img src="discord-logo-1-1.png" alt="Discord Icon">
-    <h3>Join the VRC Gang Monkeys Server</h3>
-    <p>💬 Get your own spot!</p>
-    <a href="https://discord.gg/bqGeGTBNZh" target="_blank" style="display: inline-block; margin-top: 10px; padding: 6px 12px; border: 2px solid var(--accent-dark); color: var(--accent-dark); text-decoration: none;">Launch Discord</a>
-  </div>
-</section>
-
-  
-
-  <footer>© 2025 VRC Gang Monkeys. No rules, just runtime.</footer>
-
-  <script>
-    const btn = document.getElementById('toggleMode');
-    btn.addEventListener('click', () => {
-      document.body.classList.toggle('light-mode');
-    });
-  </script>
+    </section>
 </body>
 </html>

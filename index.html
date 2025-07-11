@@ -18,9 +18,9 @@
     body {
       margin: 0;
       font-family: 'Share Tech Mono', monospace;
-      transition: background 0.3s, color 0.3s;
       background: var(--bg-dark);
       color: var(--accent-dark);
+      transition: background 0.3s, color 0.3s;
     }
 
     .light-mode {
@@ -33,16 +33,57 @@
       padding: 30px;
     }
 
-    pre.logo {
-      font-size: 13px;
-      white-space: pre;
-      line-height: 1.2;
-      margin-bottom: 15px;
-      text-shadow: 0 0 6px var(--accent-dark);
+    header img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--accent-dark);
     }
 
-    .light-mode pre.logo {
-      text-shadow: none;
+    h1 {
+      font-size: 2.5em;
+      margin: 10px 0;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    .menu {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 999;
+      font-family: monospace;
+      background-color: var(--card-bg-dark);
+      border: 2px solid var(--accent-dark);
+      border-radius: 5px;
+      padding: 10px;
+      box-shadow: 0 0 10px var(--accent-dark);
+    }
+
+    .menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu li {
+      margin: 8px 0;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: var(--accent-dark);
+    }
+
+    .light-mode .menu {
+      background-color: var(--card-bg-light);
+      border-color: var(--accent-light);
+    }
+
+    .light-mode .menu a {
+      color: var(--accent-light);
     }
 
     .grid {
@@ -64,16 +105,30 @@
       max-width: 250px;
     }
 
+    .card img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent-dark);
+      margin-bottom: 10px;
+    }
+
     .light-mode .card {
       background-color: var(--card-bg-light);
       border-color: var(--accent-light);
       box-shadow: none;
     }
 
+    .light-mode .card img {
+      border-color: var(--accent-light);
+    }
+
     footer {
       text-align: center;
       padding: 30px;
       font-size: 0.8em;
+      color: #888;
     }
 
     button#toggleMode {
@@ -87,7 +142,6 @@
       font-family: inherit;
       font-size: 1em;
       cursor: pointer;
-      transition: all 0.3s ease;
     }
 
     .light-mode button#toggleMode {
@@ -97,10 +151,18 @@
   </style>
 </head>
 <body>
+  <nav class="menu">
+    <ul>
+      <li><a href="#main">> Main Roster</a></li>
+      <li><a href="#vrc-groups">> VRC Groups</a></li>
+    </ul>
+  </nav>
+
   <button id="toggleMode">Toggle Theme</button>
-  <header>
-    <img src="wm750v32r2z61.jpg" alt="Coffin" style="width: 60px; height: 60px;">
-    <h1> VRC Gang Monkeys</h1>
+
+  <header id="main">
+    <img src="artworks-BFn3IDytgZIgBn0w-jwwrXw-t500x500.jpg" alt="Gang Logo">
+    <h1>VRC Gang Monkeys</h1>
     <p>The roster of beautifully reckless coders</p>
   </header>
 
@@ -154,14 +216,34 @@
   <div class="card"><img src="error404.jpg" alt="Error404" style="width: 60px; height: 60px;"><h3>Error404</h3><p>Standing by...</p></div>
   <div class="card"><img src="toxicity.jpg" alt="Toxicity" style="width: 60px; height: 60px;"><h3>Toxicity</h3><p>Standing by...</p></div>
   <div class="card"><img src="de159160d5d97e1ef6ccafc88b84f8d3.jpg" alt="Trash" style="width: 60px; height: 60px;"><h3>Trash</h3><p>Standing by...</p></div>
-  <div class="card"><img src="Anonymous_emblem.svg.jpg" alt="Anonymousx" style="width: 60px; height: 60px;"><h3>Anonymousx</h3><p>Standing by...</p></div>
+  <div class="card"><img src="anonymousx.jpg" alt="Anonymousx" style="width: 60px; height: 60px;"><h3>Anonymousx</h3><p>Standing by...</p></div>
   <div class="card"><img src="file_a1e1e2aa-6e2b-4318-9d84-a2a6eb3e61b6_blob.png" alt="Clowny" style="width: 60px; height: 60px;"><h3>Clowny</h3><p>Standing by...</p></div>
   <div class="card"><img src="homicide.jpg" alt="Homicide" style="width: 60px; height: 60px;"><h3>Homicide</h3><p>Standing by...</p></div>
   <div class="card"><img src="syndicate.jpg" alt="Syndicate" style="width: 60px; height: 60px;"><h3>Syndicate</h3><p>Standing by...</p></div>
  <div class="card"><img src="photo_2025-04-02_13-32-01.jpg" alt="Syndicate" style="width: 60px; height: 60px;"><h3>Admin</h3><p>Standing by...</p></div>
 
-
  </section>
+
+ <section class="grid" id="vrc-groups">
+    
+  <div class="card"><img src="lc.jpg" alt="LC"><h3>LC</h3><p>Standing by...</p></div>
+  <div class="card"><img src="hostle.jpg" alt="Hostle"><h3>Hostle</h3><p>Standing by...</p></div>
+  <div class="card"><img src="606.jpg" alt="606"><h3>606</h3><p>Standing by...</p></div>
+  <div class="card"><img src="303.jpg" alt="303"><h3>303</h3><p>Standing by...</p></div>
+  <div class="card"><img src="ghxstface-gxng.jpg" alt="Ghxstface Gxng"><h3>Ghxstface Gxng</h3><p>Standing by...</p></div>
+  <div class="card"><img src="reapers-tears.jpg" alt="Reapers Tears"><h3>Reapers Tears</h3><p>Standing by...</p></div>
+  <div class="card"><img src="immortal.jpg" alt="Immortal"><h3>Immortal</h3><p>Standing by...</p></div>
+  <div class="card"><img src="trusted-user-gxng.jpg" alt="Trusted User Gxng"><h3>Trusted User Gxng</h3><p>Standing by...</p></div>
+  <div class="card"><img src="activist.jpg" alt="Activist"><h3>Activist</h3><p>Standing by...</p></div>
+  <div class="card"><img src="anonymous.jpg" alt="Anonymous"><h3>Anonymous</h3><p>Standing by...</p></div>
+  <div class="card"><img src="808-disciple.jpg" alt="808 Disciple"><h3>808 Disciple</h3><p>Standing by...</p></div>
+  <div class="card"><img src="bass-vrc.jpg" alt="The Bass VRC"><h3>The Bass VRC</h3><p>Standing by...</p></div>
+  <div class="card"><img src="dbd.jpg" alt="DBD"><h3>DBD</h3><p>Standing by...</p></div>
+  <div class="card"><img src="system-32.jpg" alt="System 32"><h3>System 32</h3><p>Standing by...</p></div>
+  <div class="card"><img src="static.jpg" alt="Static"><h3>Static</h3><p>Standing by...</p></div>
+  <div class="card"><img src="toxic.jpg" alt="Toxic"><h3>Toxic</h3><p>Standing by...</p></div>
+  <div class="card"><img src="301.jpg" alt="301"><h3>301</h3><p>Standing by...</p></div>
+  </section>
 
 
   <footer>© 2025 VRC Gang Monkeys. No rules, just runtime.</footer>

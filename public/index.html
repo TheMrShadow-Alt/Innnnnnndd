@@ -152,25 +152,12 @@
             box-shadow: 0 0 20px rgba(75, 0, 130, 0.8);
             text-shadow: 0 0 15px #ff00ff, 0 0 25px #ff00ff; /* Enhanced purple glow on hover */
         }
-        body {
-      margin: 0;
-      background: #0a0a0a;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: 'Share Tech Mono', monospace;
-      color: #ff00ff;
-      font-size: 3em;
-      text-shadow: 0 0 15px #ff00ff;
-       }
-
         body { font-family: sans-serif; text-align: center; margin-top: 100px; }
         h1 { font-size: 40px; }
     </style>
 </head>
 <body>
-    <div id="clock">--:--:-- --</div>
+    <div class="status-bar">10:28</div>
     <a href="https://discord.gg/bqGeGTBNZh" class="discord-link">Join Our Discord</a>
     <div class="header">
         <h1>VRC GANGMONKEYS.COM</h1>
@@ -304,7 +291,7 @@
     <div class="users">
 
   </section>
-    <h1>Active Users: <span id="count">Loading...</span></h1>
+    <h1>👥 Active Users: <span id="count">Loading...</span></h1>
   <script>
     async function updateCount() {
       try {
@@ -319,22 +306,6 @@
 
     updateCount();
     setInterval(updateCount, 5000);
-  <script>
-    function updateClock() {
-      const clock = document.getElementById("clock");
-      const now = new Date();
-      let hours = now.getHours();
-      const minutes = String(now.getMinutes()).padStart(2, '0');
-      const seconds = String(now.getSeconds()).padStart(2, '0');
-      const ampm = hours >= 12 ? 'PM' : 'AM';
-      hours = hours % 12 || 12;
-      clock.textContent = `${hours}:${minutes}:${seconds} ${ampm}`;
-    }
-
-    setInterval(updateClock, 1000);
-    updateClock();
   </script>
-
-
 </body>
 </html>

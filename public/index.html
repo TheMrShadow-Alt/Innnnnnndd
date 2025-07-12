@@ -152,6 +152,8 @@
             box-shadow: 0 0 20px rgba(75, 0, 130, 0.8);
             text-shadow: 0 0 15px #ff00ff, 0 0 25px #ff00ff; /* Enhanced purple glow on hover */
         }
+        body { font-family: sans-serif; text-align: center; margin-top: 100px; }
+        h1 { font-size: 40px; }
     </style>
 </head>
 <body>
@@ -286,7 +288,29 @@
 <section class="users" id="HOA">  
     </div>
     <div class="users">
-    <div class="user-btn hoa"><img src="0.jpg" alt="Coffin" style="width: 60px; height: 60px;"><h3>Comming back soon?</h3><p>...</p></div>
+    <div class="user-btn hoa"><img src="01e2b566827af42e4818bb1814f9a641.jpg" alt="Coffin" style="width: 60px; height: 60px;"><h3>𝐖𝐞𝐞𝐏</h3><p>I'm a wanna be gang monkey.</p></div>
+    <div class="user-btn hoa"><img src="download (9).png" alt="Coffin" style="width: 60px; height: 60px;"><h3>Plugjamie</h3><p>I'm a wanna be gang monkey.</p></div>
+    <div class="user-btn hoa"><img src="01e2b566827af42e4818bb1814f9a641.jpg" alt="Coffin" style="width: 60px; height: 60px;"><h3>𝐖𝐞𝐞𝐏</h3><p>I'm a wanna be gang monkey.</p></div>
+    <div class="user-btn hoa"><img src="01e2b566827af42e4818bb1814f9a641.jpg" alt="Coffin" style="width: 60px; height: 60px;"><h3>𝐖𝐞𝐞𝐏</h3><p>I'm a wanna be gang monkey.</p></div>
+    <div class="user-btn hoa"><img src="01e2b566827af42e4818bb1814f9a641.jpg" alt="Coffin" style="width: 60px; height: 60px;"><h3>𝐖𝐞𝐞𝐏</h3><p>I'm a wanna be gang monkey.</p></div>
+    <div class="user-btn hoa"><img src="01e2b566827af42e4818bb1814f9a641.jpg" alt="Coffin" style="width: 60px; height: 60px;"><h3>𝐖𝐞𝐞𝐏</h3><p>I'm a wanna be gang monkey.</p></div>
+    <div class="user-btn hoa"><img src="01e2b566827af42e4818bb1814f9a641.jpg" alt="Coffin" style="width: 60px; height: 60px;"><h3>𝐖𝐞𝐞𝐏</h3><p>I'm a wanna be gang monkey.</p></div>
+  </section>
+    <h1>👥 Active Users: <span id="count">Loading...</span></h1>
+  <script>
+    async function updateCount() {
+      try {
+        const res = await fetch('/api/track');
+        const data = await res.json();
+        document.getElementById('count').textContent = data.activeUsers;
+      } catch (e) {
+        console.error(e);
+        document.getElementById('count').textContent = "Error";
+      }
+    }
 
+    updateCount();
+    setInterval(updateCount, 5000);
+  </script>
 </body>
 </html>

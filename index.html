@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login • gangmonkeys</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="Your_paragraph_text_12-removebg-preview.png">
+  <style>
+    body {
+      background: black;
+      font-family: 'Courier New', monospace;
+      color: white;
+    }
+    .form-container {
+      max-width: 400px;
+      margin: 80px auto;
+      padding: 20px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .input-field {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 6px;
+      border: none;
+      color: white;
+    }
+    .btn, .no-login-btn {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn {
+      background: white;
+      color: black;
+    }
+    .btn:hover {
+      background: #ccc;
+    }
+    .no-login-btn {
+      background: transparent;
+      color: white;
+      border: 1px solid white;
+    }
+    .no-login-btn:hover {
+      background: rgba(255,255,255,0.1);
+    }
+    .toggle-link {
+      color: #ccc;
+      text-align: center;
+      cursor: pointer;
+      display: block;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container" id="loginForm">
+    <h2 class="text-2xl font-bold mb-4 text-center">Login</h2>
+    <input type="text" id="loginUser" class="input-field" placeholder="Username" />
+    <input type="password" id="loginPass" class="input-field" placeholder="Password" />
+    <button class="btn" onclick="handleLogin()">Login</button>
+    <span class="toggle-link" onclick="toggleForms()">Need to register?</span>
+    <button class="no-login-btn" onclick="continueWithoutLogin()">Continue without login</button>
+  </div>
+
+  <div class="form-container" id="registerForm" style="display:none;">
+    <h2 class="text-2xl font-bold mb-4 text-center">Register</h2>
+    <input type="text" id="regUser" class="input-field" placeholder="Username" />
+    <input type="password" id="regPass" class="input-field" placeholder="Password" />
+    <button class="btn" onclick="handleRegister()">Register</button>
+    <span class="toggle-link" onclick="toggleForms()">Already have an account?</span>
+    <button class="no-login-btn" onclick="continueWithoutLogin()">Continue without login</button>
+  </div>
+
+  <script>
+    function toggleForms() {
+      const loginForm = document.getElementById('loginForm');
+      const registerForm = document.getElementById('registerForm');
+      const isLoginVisible = loginForm.style.display !== 'none';
+      loginForm.style.display = isLoginVisible ? 'none' : 'block';
+      registerForm.style.display = isLoginVisible ? 'block' : 'none';
+    }
+
+    function handleRegister() {
+      const user = document.getElementById('regUser').value.trim();
+      const pass = document.getElementById('regPass').value.trim();
+      if (!user || !pass) {
+        alert("Fill out both fields");
+        return;
+      }
+      localStorage.setItem(user, pass);
+      alert("Registered!");
+      toggleForms();
+    }
+
+    function handleLogin() {
+      const user = document.getElementById('loginUser').value.trim();
+      const pass = document.getElementById('loginPass').value.trim();
+      const stored = localStorage.getItem(user);
+      if (stored === pass) {
+        alert("Login successful");
+        localStorage.setItem("gangmonkeyUser", user); // ✅ Store for display later
+        continueWithoutLogin();
+      } else {
+        alert("Login failed");
+      }
+    }
+
+    function continueWithoutLogin() {
+      window.location.href = "/home"; // landing page
+    }
+  </script>
+
+</body>
+</html>

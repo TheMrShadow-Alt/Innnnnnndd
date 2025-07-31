@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #111;
+  font-family: 'Courier New', monospace;
+  color: #eee;
+}
+
+.hoa-upload {
+  max-width: 600px;
+  margin: 3em auto;
+  padding: 2em;
+  background: rgba(20, 20, 20, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 0 20px #ff5f5f;
+}
+
+.hoa-upload h2 {
+  text-align: center;
+  color: #ff5f5f;
+}
+
+label {
+  display: block;
+  margin-top: 1em;
+  font-weight: bold;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 0.7em;
+  margin-top: 0.3em;
+  background: #222;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 5px;
+}
+
+.submit-button {
+  margin-top: 1.5em;
+  width: 100%;
+  background-color: #ff5f5f;
+  color: black;
+  border: none;
+  padding: 0.8em;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #ff8080;
+}
+
+.submission-preview {
+  margin-top: 2em;
+  padding: 1em;
+  background: #222;
+  border-radius: 10px;
+}

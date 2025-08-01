@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login • gangmonkeys</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="icon" type="image/png" sizes="32x32" href="Your_paragraph_text_12-removebg-preview.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icon/Your_paragraph_text_12-removebg-preview.png">
   <style>
     body {
       background: black;
@@ -64,6 +64,10 @@
 </head>
 <body>
 
+  <div class="bg-red-600 text-white text-center py-3 font-bold">
+  Down For Maintenance: The Hosting Server Is Being Updated.
+</div>
+
   <div class="form-container" id="loginForm">
     <h2 class="text-2xl font-bold mb-4 text-center">Login</h2>
     <input type="text" id="loginUser" class="input-field" placeholder="Username" />
@@ -108,16 +112,17 @@
       const pass = document.getElementById('loginPass').value.trim();
       const stored = localStorage.getItem(user);
       if (stored === pass) {
-        alert("Login successful");
+        alert("Website is being worked on");
         localStorage.setItem("gangmonkeyUser", user); // ✅ Store for display later
         continueWithoutLogin();
       } else {
-        alert("Login failed");
+        alert("Website is being worked on");
       }
     }
 
     function continueWithoutLogin() {
-      window.location.href = "/home.html"; // landing page
+      alert("Website is being worked on");
+      window.location.href = "/Website is being worked on"; // landing page
     }
   </script>
 
